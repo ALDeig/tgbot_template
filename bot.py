@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.fsm_storage.redis import RedisStorage
 from aiogram.types import BotCommand, BotCommandScopeChat
-from aiogram.utils.exceptions import ChatNotFoun
+from aiogram.utils.exceptions import ChatNotFound
 
 from tgbot.config import load_config
 from tgbot.filters.admin import AdminFilter
@@ -45,7 +45,7 @@ async def set_commands(dp: Dispatcher):
         try:
             await dp.bot.set_my_commands(
                 commands=commands_for_admin,
-                scope=BotCommandScopecChat(admin_id)
+                scope=BotCommandScopeChat(admin_id)
             )
         except ChatNotFound as er:
             logging.error(f'Установка команд для администратора {admin_id}: {er}')
