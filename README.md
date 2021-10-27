@@ -1,7 +1,8 @@
 # tgbot_template
 
-#Alembic
-alembic init alembic
+## Alembic
+`alembic init alembic`
+
 in env.py import Base from models.models
 add function in env.py
 
@@ -38,5 +39,6 @@ change function run_migrations_online:
     else:
         asyncio.run(run_migrations_online())
 
-alembic revision --message="Create tables" --autogenerate
-alembic upgrade head
+`alembic revision --message="Create tables" --autogenerate`
+
+`alembic upgrade head`
