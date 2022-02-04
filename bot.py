@@ -7,7 +7,7 @@ from aiogram.contrib.fsm_storage.redis import RedisStorage
 from aiogram.types import BotCommand, BotCommandScopeChat
 from aiogram.utils.exceptions import ChatNotFound
 
-from tgbot.config import load_config
+from tgbot.config import Settings
 from tgbot.filters.admin import AdminFilter
 from tgbot.handlers.admin import register_admin
 from tgbot.handlers.echo import register_echo
@@ -54,7 +54,7 @@ async def set_commands(dp: Dispatcher):
 async def main():
     setup_logger('INFO')
     logging.info('Starting bot')
-    config = load_config('.env')
+    config = Settings()
 
     if config.tg_bot.use_redis:
         storage = RedisStorage()
