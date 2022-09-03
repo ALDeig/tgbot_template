@@ -2,6 +2,13 @@ aiogram
 SQLAlchemy
 pydantic
 python-dotenv
-asyncpg
-alembic
 loguru
+# asyncpg
+# aiosqlite
+# alembic
+# APScheduler
+# httpx
+# pydantic-aioredis
+# shortuuid
+
+

@@ -1,11 +1,11 @@
 from aiogram import Dispatcher
 from aiogram.types import Message
 
-from tgbot.models.users import User
+from tgbot.services.db_queries import Db
 
 
-async def user_start(message: Message, user: User):
-    await message.reply("Hello, user!")
+async def user_start(msg: Message, db: Db):
+    await msg.reply("Hello, user!")
 
 
 def register_user(dp: Dispatcher):
